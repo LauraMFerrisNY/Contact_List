@@ -9,7 +9,7 @@ const dummyContacts = [
     { id: 3, name: "BB-8", phone: "888-888-8888", email: "bb8@droids.com" },
   ];
 
-export default function ContactList() {
+export default function ContactList({ setSelectedContactId, contact }) {
     const [contacts, setContacts] = useState(dummyContacts)
 
     useEffect(()=>{
@@ -34,7 +34,7 @@ export default function ContactList() {
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr onClick={() => {setSelectedContactId(contact.id);}}>
               <td>Name</td>
               <td>Email</td>
               <td>Phone</td>
